@@ -7,10 +7,11 @@ def pplist(l, indent=0, tree=""):
         else:
             tree += (' ' * indent + str(e) + '\n')
     return tree
-    
+
+
 def ppdict(d, indent=0, tree=""):
     for key, value in d.items():
-        tree += (' ' * indent + str(key) + '\n')
+        tree += (' ' * indent + str(key))
         if isinstance(value, dict):
             tree += ppdict(value, indent+4, tree)
         elif isinstance(value, list):
